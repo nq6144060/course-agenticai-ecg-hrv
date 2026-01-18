@@ -82,21 +82,25 @@ This dataset is designed for use in an **Agentic AI Adaptive Analysis Loop**. Be
 
 ```python
 import pandas as pd
+import numpy as np
+from pathlib import Path
 
-# Define headers matching your data structure
-headers = ['frame', 'timestamp', 'ppg', 'ecg', 'aux1', 'aux2']
+def read_ecg_column(csv_path: Path, ecg_col_index: int = 3, header: bool = True) -> np.ndarray:
+    """從 CSV 讀取 ECG 數據 (預設 D 欄)"""
+    df = pd.read_csv(csv_path, header=0 if header else None)
+    # 提取 ECG 欄位並轉為浮點數
+    x = df.iloc[:, ecg_col_index].astype(float).to_numpy()
+    # 以中位數填充 NaN 缺失值
+    x = np.nan_to_num(x, nan=np.nanmedian(x))
+    return x
 
-# Load processed data (Example: Subject 809 Static Level 1)
-file_path = 'processed/809_static_level1_20260113_232205_extended_poll.bin_align.csv'
-data = pd.read_csv(file_path, names=headers)
+def scan_files(data_dir: Path, persons_cfg, states: list[str], file_glob: str) -> list[dict]:
+    """自動遍歷資料夾結構尋找待處理檔案"""
+    records = []
+    for pid in persons_cfg:
+        for st in states:
+            folder = data_dir / pid / st
+            for fp in sorted(folder.glob(file_glob)):
+                records.append({"person_id": pid, "state": st, "path": fp})
+    return records
 
-# 1. Access PPG and ECG for personalized HRV analysis
-ppg_signal = data['ppg']
-ecg_signal = data['ecg']
-
-# 2. Use 'frame' to synchronize with external video data
-sync_frame = data['frame']
-
-# Agent Logic Tip: 
-# The system can detect activity state from the filename and 
-# select the appropriate filter for the 'ecg' column.
