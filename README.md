@@ -323,7 +323,6 @@ git checkout -b submission/YYYY-YourName-type
 
 ---
 
-
 ## Git Guide for Beginners
 
 If you have never used Git before, follow these steps carefully.
@@ -350,7 +349,7 @@ sudo apt update
 sudo apt install git
 ```
 
-### Step 2: Configure Git
+### Step 2: Configure Git **[All students]**
 
 Open your terminal and set your identity:
 
@@ -662,14 +661,11 @@ git push origin submission/YYYY-YourFamilyName-type
 git push origin submission/2026-Chen-case-brief
 ```
 
-### Step 11: Create a Pull Request to Group
+### Step 11: Create a Pull Request to Group **[Group Member only]**
 
-The PR target depends on your role:
+Group members submit PRs to their group leader's fork (`upstream-group`).
 
-- **Group Members** → PR to **group leader's fork** (`upstream-group`)
-- **Group Leaders** → PR to **nordlinglab** (`upstream-nordlinglab`)
-
-#### For Group Members - PR to Group Leader **[Group Member only]**
+#### PR to Group Leader
 
 **Using gh CLI:**
 ```bash
@@ -793,9 +789,8 @@ git merge upstream-nordlinglab/main
 git push origin main
 ```
 
-### Step 14: Create a Pull Request to Submit Group's Work
+### Step 14: Create a Pull Request to Submit Group's Work **[Group Leader only]**
 
-#### For Group Leaders - PR to nordlinglab **[Group Leader only]**
 
 First, ensure all member PRs are merged into your main branch. Then create a submission branch and PR:
 
@@ -877,11 +872,11 @@ git push origin submission/YYYY-GroupNames-type
 # The PR will automatically update
 ```
 
-### Step 16: Updating Your Fork
+### Step 16: Updating Your Fork **[All students]**
 
 Sync your fork when the upstream repository has new changes.
 
-### For Group Leaders **[Group Leader only]**
+#### For Group Leaders **[Group Leader only]**
 
 Sync from nordlinglab (course repository):
 
@@ -908,7 +903,7 @@ git pull origin main
 git submodule update --init --recursive
 ```
 
-### For Group Members **[Group Member only]**
+#### For Group Members **[Group Member only]**
 
 Sync from your group leader's fork:
 
@@ -949,7 +944,6 @@ git push origin main
 | `git pull` | Download updates from remote |
 | `git log` | View commit history |
 | `git diff` | Show unstaged changes |
-
 
 ---
 
