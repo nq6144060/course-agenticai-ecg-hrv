@@ -1,7 +1,8 @@
 # Test Suite: Agentic ECG HRV Baseline Evaluation System
 
 **Group:** 2026-Chu-Lin-Lin  
-**Authors:** Chu, Lin, Lin  
+**Authors:** Chu YenChieh,Lin ChihYi,Lin WenHsin  
+**Date:** 2026-01-16
 **License:** Apache-2.0 (code), CC-BY-4.0 (documentation)
 
 ---

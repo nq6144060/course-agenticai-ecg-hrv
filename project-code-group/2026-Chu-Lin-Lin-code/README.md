@@ -4,7 +4,7 @@ An **HRV-based stress classifier** that extracts Heart Rate Variability features
 
 **Group:** 2026-Chu-Lin-Lin
 
-**Authors:** CHU,YEN-CHIEH, LIN,CHIH-YI ,LIN,WEN-HSIN
+**Authors:** Chu YenChieh,Lin ChihYi,Lin WenHsin 
 
 **License:** Apache-2.0
 

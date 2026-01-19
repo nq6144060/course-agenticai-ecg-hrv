@@ -1,7 +1,7 @@
 # Data: Multi-Modal Physiological Dataset for Personalized HRV Analysis
 
 **Group:** 2026-Chu-Lin-Lin  
-**Authors:** LIN, CHIH-YI; CHU, YEN-CHIEH; LIN, WEN-HSIN  
+**Authors:** Chu YenChieh,Lin ChihYi,Lin WenHsin   
 **License:** CC-BY-4.0 (this documentation); Original dataset CC-BY-4.0
 
 ## Dataset Overview
@@ -11,7 +11,7 @@
 This dataset contains synchronized multi-modal physiological signals (PPG and ECG) and camera frame references, designed to bridge the personalization gap in longitudinal monitoring.
 
 **Original Source:** Internally collected by the 2026-Chu-Lin-Lin research team for the Agentic AI course project.  
-**Download at:** `data-group/2026-Chu-Lin-Lin-data/processed/`
+**Download at:** `data-group/2026-Chu-Lin-Lin-data/`
 
 ### License
 
