@@ -28,8 +28,8 @@ Citations required for using this data:
 |----------|-------|
 | Subjects | 2 (ID: 595, 809) |
 | Demographics | Anonymized; Healthy adults |
-| Data Length | ~5-10 minutes per session |
-| Sampling Rate | ~250 Hz (Extended Polling) |
+| Data Length | ~2-6 minutes per session |
+| Sampling Rate | ~50 Hz (Extended Polling) |
 | Total Files | 16 |
 | Modalities | 2 (PPG, ECG) |
 | Conditions | 4 (Static, Bike, Speak, Rotate) |
