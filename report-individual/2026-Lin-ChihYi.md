@@ -125,10 +125,10 @@ The system is implemented in Python 3.11+, leveraging standard scientific comput
     *   **Bandpass Filtering**: A Butterworth filter is applied to remove baseline wander and high-frequency noise, isolating the relevant ECG frequency range.
     *   **R-peak Detection**: Robust algorithms (e.g., derivative-based methods) are used to accurately identify R-peaks, which are critical for deriving R-R intervals.
 
-3.  **HRV Feature Extraction (`src/tools/feature_extractor.py`, `src/tools/extended_features.py`)**: `numpy` and `scipy.signal` are used to compute:
+3.  **HRV Feature Extraction (`src/tools/extended_features.py`)**: Utilizes `numpy` and `scipy.signal` to compute a comprehensive set of 20 HRV features, including:
     *   **Time-Domain Features**: Such as SDNN (standard deviation of NN intervals), RMSSD (root mean square of successive differences).
     *   **Frequency-Domain Features**: Calculated using Welch's method for Power Spectral Density (PSD), yielding LF (low-frequency) and HF (high-frequency) power, and their ratio (LF/HF).
-    *   **Non-Linear Features**: Including Poincare plot descriptors (SD1, SD2) and Sample Entropy. The project focuses on a comprehensive set of 20 HRV features.
+    *   **Non-Linear Features**: Including Poincare plot descriptors (SD1, SD2) and Sample Entropy.
 
 4.  **Baseline Construction**: The system builds personalized baselines per subject and condition. This involves analyzing reference ECG recordings to establish typical HRV metric ranges for "Rest" and "Active" states. These baselines are crucial for the rule-based evaluation.
 
@@ -137,7 +137,7 @@ The system is implemented in Python 3.11+, leveraging standard scientific comput
     *   **Rule-Based Decision**: For each window, the extracted HRV features are compared against the corresponding personalized baseline. These rules are often based on statistical thresholds derived from the baselines, defining acceptable ranges for HRV metrics to classify a window as physiologically consistent. This leads to a "pass" or "fail" decision for that window.
     *   **Aggregation**: Window-level decisions are aggregated to calculate a `pass_rate` for the entire recording (`n_pass / n_windows`), reflecting overall physiological consistency.
 
-6.  **Result Generation (`src/tools/report_generator.py`)**: Outputs include `baselines.json`, `pass_rates.csv`, and detailed per-file JSON outputs. `matplotlib` is used for visualizations, and `reportlab` can be utilized for generating PDF reports.
+6.  **Result Generation (`src/tools/report_generator.py`)**: Outputs include `baselines.json`, `pass_rates.csv`, detailed per-file JSON outputs, and comprehensive Markdown reports. `matplotlib` is used for visualizations.
 
 ### Agentic Decision Module
 
